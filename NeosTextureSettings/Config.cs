@@ -1,26 +1,8 @@
-﻿using CodeX;
-using FrooxEngine;
-using NeosModLoader;
+﻿using NeosModLoader;
 using System.Reflection;
 
 namespace NeosTextureSettings
 {
-    public enum AndroidTextureFormat
-    {
-        ETC2 = 96,
-        ASTC = 128
-    }
-
-    public enum ASTC_BlockSize
-    {
-        _4x4 = 1,
-        _5x5,
-        _6x6,
-        _8x8,
-        _10x10,
-        _12x12
-    }
-
     public enum TextureLimit
     {
         Unlimited,
@@ -65,27 +47,6 @@ namespace NeosTextureSettings
                 description += string.Format(" (Default: {0})", (int)plat_limit);
             }
             return description;
-        }
-
-
-        internal static AndroidTextureFormat GetDefaultFormat()
-        {
-            var engine = Engine.Current;
-            if (engine == null) return AndroidTextureFormat.ETC2;
-
-            if (engine.SystemInfo.SupportsTextureFormat(TextureFormat.ASTC_8x8)) return AndroidTextureFormat.ASTC;
-            return AndroidTextureFormat.ETC2;
-        }
-
-        public static TextureFormat GetNativeTextureFormat()
-        {
-            AndroidTextureFormat format = _config.GetValue(NeosTextureSettings.TARGET_FORMAT);
-            if (format == AndroidTextureFormat.ASTC)
-            {
-                int astc_modifier = (int)format + (int)_config.GetValue(NeosTextureSettings.ASTC_BLOCK_SIZE);
-                return (TextureFormat)astc_modifier;
-            }
-            return (TextureFormat)format;
         }
     }
 }

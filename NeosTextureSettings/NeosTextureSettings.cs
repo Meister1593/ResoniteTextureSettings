@@ -11,11 +11,6 @@ namespace NeosTextureSettings
         public override string Link => "https://github.com/Raemien/NeosTextureSettings";
 
         [AutoRegisterConfigKey]
-        internal static readonly ModConfigurationKey<AndroidTextureFormat> TARGET_FORMAT = new ModConfigurationKey<AndroidTextureFormat>("Target Format", "Convert incompatible textures to...", () => Config.GetDefaultFormat());
-        [AutoRegisterConfigKey]
-        internal static readonly ModConfigurationKey<ASTC_BlockSize> ASTC_BLOCK_SIZE = new ModConfigurationKey<ASTC_BlockSize>("ASTC Block Size", "ASTC Block Size (Higher = less memory)", () => ASTC_BlockSize._8x8);
-
-        [AutoRegisterConfigKey]
         internal static readonly ModConfigurationKey<bool> ANDROID_FIXES = new ModConfigurationKey<bool>("Android Compatibility Fixes", "Fix Android/Quest Compatibility", () => Config.IsAndroid(), !Config.IsAndroid());
         [AutoRegisterConfigKey]
         internal static readonly ModConfigurationKey<TextureLimit> MASTER_TEX_LIMIT = new ModConfigurationKey<TextureLimit>("Master Texture Limit", Config.GetMasterLimitDesc(), () => Config.DefaultSizeForPlatform());
