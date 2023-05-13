@@ -7,7 +7,7 @@ namespace NeosTextureSettings
     {
         public override string Name => "NeosTextureSettings";
         public override string Author => "Raemien";
-        public override string Version => "0.1.0";
+        public override string Version => "1.0.0";
         public override string Link => "https://github.com/Raemien/NeosTextureSettings";
 
         [AutoRegisterConfigKey]
