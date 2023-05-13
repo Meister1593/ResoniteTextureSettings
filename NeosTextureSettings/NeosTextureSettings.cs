@@ -17,7 +17,7 @@ namespace NeosTextureSettings
         [AutoRegisterConfigKey]
         internal static readonly ModConfigurationKey<bool> LIMIT_CUBEMAPS = new ModConfigurationKey<bool>("Limit Affects Cubemaps", "Apply limit to Cubemaps", () => false);
         [AutoRegisterConfigKey]
-        internal static readonly ModConfigurationKey<bool> USE_COMPRESSED = new ModConfigurationKey<bool>("Ignore Uncompressed Flag", "Always ask for compressed textures", () => false, Config.IsAndroid());
+        internal static readonly ModConfigurationKey<bool> USE_COMPRESSED = new ModConfigurationKey<bool>("Ignore Uncompressed Flag", "Ask for compressed textures in a very stern voice", () => false, Config.IsAndroid());
 
         public override void OnEngineInit()
         {
