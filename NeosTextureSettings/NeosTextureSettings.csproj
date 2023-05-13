@@ -56,6 +56,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="HarmonyPatches\UpdateVariantDescriptorPatch.cs" />
     <Compile Include="Helpers\StaticTextureHelper.cs" />
+    <Compile Include="Helpers\SyncFieldHelper.cs" />
     <Compile Include="NeosTextureSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

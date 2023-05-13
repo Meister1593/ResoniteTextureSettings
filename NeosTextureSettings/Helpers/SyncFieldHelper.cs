@@ -1,0 +1,14 @@
+﻿using FrooxEngine;
+using System.Reflection;
+
+namespace NeosTextureSettings.Helpers
+{
+    internal static class SyncFieldHelper
+    {
+        public static void SetClientside<T>(this Sync<T> sync, T value)
+        {
+            var field_internal = sync.GetType().GetField("_value", BindingFlags.NonPublic | BindingFlags.Instance);
+            field_internal.SetValue(sync, value);
+        }
+    }
+}
