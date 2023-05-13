@@ -1,6 +1,8 @@
 # NeosVR Texture Settings
 
-This mod allows users to control texture quality settings clientside. Useful for decreasing your memory footprint.
+Allows users to control texture quality settings clientside. Useful for decreasing texture memory usage.
+
+This mod takes full advantage of NeosVR's asset variant system, offloading work to the asset servers.
 
 ## Features
 - Cross-compatibile with Android/Quest!
