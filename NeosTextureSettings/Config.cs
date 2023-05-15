@@ -1,4 +1,5 @@
-﻿using NeosModLoader;
+﻿using FrooxEngine;
+using NeosModLoader;
 using System.Reflection;
 
 namespace NeosTextureSettings
@@ -27,8 +28,9 @@ namespace NeosTextureSettings
 
         public static bool IsAndroid()
         {
-            string path = Assembly.GetExecutingAssembly().CodeBase;
-            return path.Contains("ModData/com.Solirax.Neos");
+            ISystemInfo info = Engine.Current.SystemInfo;
+            if (info != null) return info.Platform == Platform.Android;
+            else return Assembly.GetExecutingAssembly().CodeBase.Contains("ModData/com.Solirax.Neos");
         }
 
         public static TextureLimit DefaultSizeForPlatform()
