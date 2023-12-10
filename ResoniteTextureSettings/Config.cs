@@ -26,17 +26,18 @@ namespace ResoniteTextureSettings
             return _config.GetValue(key);
         }
 
-        public static bool IsAndroid()
-        {
-            ISystemInfo info = Engine.Current.SystemInfo;
-            if (info != null) return info.Platform == Platform.Android;
-            else return Assembly.GetExecutingAssembly().CodeBase.Contains("ModData/com.Solirax.Neos");
-        }
+        // public static bool IsAndroid()
+        // {
+        //     ISystemInfo info = Engine.Current.SystemInfo;
+        //     if (info != null) return info.Platform == Platform.Android;
+        //     else return Assembly.GetExecutingAssembly().CodeBase.Contains("ModData/com.Solirax.Neos");
+        // }
 
         public static TextureLimit DefaultSizeForPlatform()
         {
-            if (IsAndroid()) return TextureLimit._512;
-            else return TextureLimit.Unlimited;
+            // if (IsAndroid()) return TextureLimit._512;
+            // else 
+            return TextureLimit.Unlimited;
         }
 
         public static string GetMasterLimitDesc()

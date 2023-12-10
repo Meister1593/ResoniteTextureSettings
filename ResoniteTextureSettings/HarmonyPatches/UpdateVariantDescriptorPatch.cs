@@ -11,7 +11,7 @@ namespace ResoniteTextureSettings.HarmonyPatches
     {
         private static bool Prefix(object __instance)
         {
-            bool limit_cubemaps = Config.GetValue(NeosTextureSettings.LimitCubemaps);
+            bool limit_cubemaps = Config.GetValue(ResoniteTextureSettings.LimitCubemaps);
             var texture_type = __instance.GetType();
 
             if (texture_type == typeof(StaticTexture2D))

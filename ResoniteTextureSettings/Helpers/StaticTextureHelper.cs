@@ -7,7 +7,7 @@ namespace ResoniteTextureSettings.Helpers
     {
         public static void ModifyDescriptor(StaticTexture2D texture)
         {
-            int master_limit = (int)Config.GetValue<TextureLimit>(NeosTextureSettings.MasterTexLimit);
+            int master_limit = (int)Config.GetValue<TextureLimit>(ResoniteTextureSettings.MasterTexLimit);
             int? current_size = texture.MaxSize.Value;
 
             if (ForceCompression) texture.Uncompressed.SetClientside(false);
@@ -21,7 +21,7 @@ namespace ResoniteTextureSettings.Helpers
 
         public static void ModifyDescriptor(StaticCubemap texture)
         {
-            int master_limit = (int)Config.GetValue(NeosTextureSettings.MasterTexLimit);
+            int master_limit = (int)Config.GetValue(ResoniteTextureSettings.MasterTexLimit);
             int? current_size = texture.MaxSize.Value;
 
             if (master_limit != 0)
@@ -30,7 +30,7 @@ namespace ResoniteTextureSettings.Helpers
                 texture.MaxSize.SetClientside(newval);
             };
         }
-        private static bool ApplyAndroidFixes => Config.GetValue(NeosTextureSettings.AndroidFixes);
-        private static bool ForceCompression => ApplyAndroidFixes || Config.GetValue(NeosTextureSettings.UseCompressed);
+        private static bool ApplyAndroidFixes => Config.GetValue(ResoniteTextureSettings.AndroidFixes);
+        private static bool ForceCompression => ApplyAndroidFixes || Config.GetValue(ResoniteTextureSettings.UseCompressed);
     }
 }
