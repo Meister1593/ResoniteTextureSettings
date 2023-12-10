@@ -1,13 +1,13 @@
-﻿using BaseX;
+﻿using Elements.Core;
 using FrooxEngine;
 
-namespace NeosTextureSettings.Helpers
+namespace ResoniteTextureSettings.Helpers
 {
     internal class StaticTextureHelper
     {
         public static void ModifyDescriptor(StaticTexture2D texture)
         {
-            int master_limit = (int)Config.GetValue(NeosTextureSettings.MASTER_TEX_LIMIT);
+            int master_limit = (int)Config.GetValue<TextureLimit>(NeosTextureSettings.MasterTexLimit);
             int? current_size = texture.MaxSize.Value;
 
             if (ForceCompression) texture.Uncompressed.SetClientside(false);
@@ -21,7 +21,7 @@ namespace NeosTextureSettings.Helpers
 
         public static void ModifyDescriptor(StaticCubemap texture)
         {
-            int master_limit = (int)Config.GetValue(NeosTextureSettings.MASTER_TEX_LIMIT);
+            int master_limit = (int)Config.GetValue(NeosTextureSettings.MasterTexLimit);
             int? current_size = texture.MaxSize.Value;
 
             if (master_limit != 0)
@@ -30,7 +30,7 @@ namespace NeosTextureSettings.Helpers
                 texture.MaxSize.SetClientside(newval);
             };
         }
-        private static bool ApplyAndroidFixes => Config.GetValue(NeosTextureSettings.ANDROID_FIXES);
-        private static bool ForceCompression => ApplyAndroidFixes || Config.GetValue(NeosTextureSettings.USE_COMPRESSED);
+        private static bool ApplyAndroidFixes => Config.GetValue(NeosTextureSettings.AndroidFixes);
+        private static bool ForceCompression => ApplyAndroidFixes || Config.GetValue(NeosTextureSettings.UseCompressed);
     }
 }

@@ -1,17 +1,17 @@
-﻿using CodeX;
+﻿using Elements.Assets;
 using FrooxEngine;
 using HarmonyLib;
-using NeosModLoader;
-using NeosTextureSettings.Helpers;
+using ResoniteModLoader;
+using ResoniteTextureSettings.Helpers;
 
-namespace NeosTextureSettings.HarmonyPatches
+namespace ResoniteTextureSettings.HarmonyPatches
 {
     [HarmonyPatch(typeof(StaticTextureProvider<Texture2D, Bitmap2D, BitmapMetadata, FrooxEngine.Texture2DVariantDescriptor>), "UpdateVariantDescriptor")]
     internal class UpdateVariantDescriptorPatch
     {
         private static bool Prefix(object __instance)
         {
-            bool limit_cubemaps = Config.GetValue(NeosTextureSettings.LIMIT_CUBEMAPS);
+            bool limit_cubemaps = Config.GetValue(NeosTextureSettings.LimitCubemaps);
             var texture_type = __instance.GetType();
 
             if (texture_type == typeof(StaticTexture2D))
@@ -26,7 +26,7 @@ namespace NeosTextureSettings.HarmonyPatches
                 return true;
             }
 
-            NeosMod.Debug("[NeosTextureSettings] Unknown StaticTexture Type: " + texture_type.Name);
+            ResoniteMod.Debug("[ResoniteTextureSettings] Unknown StaticTexture Type: " + texture_type.Name);
 
             return true;
         }

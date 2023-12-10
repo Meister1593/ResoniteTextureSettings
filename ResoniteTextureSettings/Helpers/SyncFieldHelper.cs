@@ -1,7 +1,7 @@
 ﻿using FrooxEngine;
 using System.Reflection;
 
-namespace NeosTextureSettings.Helpers
+namespace ResoniteTextureSettings.Helpers
 {
     internal static class SyncFieldHelper
     {

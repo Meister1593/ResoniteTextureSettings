@@ -1,8 +1,8 @@
 ﻿using FrooxEngine;
-using NeosModLoader;
+using ResoniteModLoader;
 using System.Reflection;
 
-namespace NeosTextureSettings
+namespace ResoniteTextureSettings
 {
     public enum TextureLimit
     {
